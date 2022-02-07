@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>Christian's Calculator</title>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Calculator</h1>
+        </header>
+        <section class="display">
+            <div class="previousValue"></div>
+            <input type="text" class="currentValue" value="0" readonly>
+        </section>
+
+        <button class="clearEntry function">CE</button>
+        <button class="clear function">C</button>
+        <button class="delete function"><i class="fas fa-backspace"></i></button>
+        <button class="operator divide function"><i class="fas fa-divide"></i></button>
+
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator multiply function"><i class="fas fa-times"></i></button>
+
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator substract function"><i class="fas fa-minus"></i></button>
+
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator add function"><i class="fas fa-plus"></i></button>
+
+        <button class="signchange">+/-</button>
+        <button class="number">0</button>
+        <button class="number">.</button>
+        <button class="operator equals function" function"><i class="fas fa-equals"></i></button>
+
+    </main>
+    <script src="/script.js"></script>
+</body>
+</html>
