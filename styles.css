@@ -22,7 +22,7 @@ body {
 .container {
     width: 90vw;
     max-width: 500px;
-    background: rgb(36, 36, 36);
+    background: rgba(0, 0, 0, 0.5);
     display: grid;
     gap: 1px;
     padding: 6px;
@@ -33,10 +33,6 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
 }
-
-/* .container:focus-within {
-    background-color: rgba(255,255,255,0.5);
-} */
 
 .header {
     grid-area: header;
@@ -58,13 +54,13 @@ header > h1 {
     flex-direction: column;
 }
 
-.previousValue {
+.previousvalue {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.currentValue {
+.currentvalue {
    font-size: 3rem;
    font-weight: bold;
    background-color: transparent;

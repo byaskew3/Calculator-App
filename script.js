@@ -1,77 +1,25 @@
-const initApp = () => {
+// Basic Math Operators
+const add = (num1, num2) => num1 + num2;
+const substract = (num1, num2) => num1 - num2;
+const multiply = (num1, num2) => num1 * num2;
+const divide = (num1, num2) => num1 / num2;
 
-    // cache the DOM
-    const currentValueElement = document.querySelector('.currentValue');
-    const previousValueElement = document.querySelector('.previousValue');
-    const inputButtons = document.querySelectorAll('.number');
-    const clearButtons = document.querySelectorAll('.clear', '.clearEntry');
-    const deleteButton = document.querySelector('.delete');
-    const signChangeButton = document.querySelector('.signchange');
-    const operatorButtons = document.querySelectorAll('.operator');
-
-    let itemArray = [];
-    const equationArray = [];
-    let newNumberFlag = false;
-
-    inputButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const newInput = event.target.textContent;
-            if (newNumberFlag) {
-                currentValueElement.value = newInput;
-                newNumberFlag = false;
-            } else {
-                currentValueElement.value = 
-                    currentValueElement.value == 0 
-                        ? newInput
-                        : `${currentValueElement.value}${newInput}`;
-            }
-        });
-    });
-    
-    // C button (Clear button)
-    clearButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            currentValueElement.value = 0;
-            if (event.target.classList.contains('clear')) {
-                previousValueElement.textContent = '';
-                itemArray = [];
-            }
-        });
-    });
-
-    // Delete Button
-    deleteButton.addEventListener('click', () => {
-        currentValueElement.value = currentValueElement.value.slice(0, -1);
-    })
-
-    // +/- Button
-    signChangeButton.addEventListener('click', () => {
-        currentValueElement.value = parseFloat(currentValueElement.value) * -1;
-    })
-
-    operatorButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-           
-            // equal sign showing
-            if (newNumberFlag) {
-                previousValueElement.textContent = '';
-                itemArray = [];
-            }
-
-            const newOperator = event.target.textContent;
-            const currentVal = currentValueElement.value;
-
-            // Checks for present number
-            if (!itemArray.length && currentVal == 0) return;
-
-            // begin new equation
-            if (itemArray.length) {
-                itemArray.push(currentVal, newOperator);
-                previousValueElement.textContent = `${currentVal}${newOperator}`;
-                return newNumberFlag = true;
-            }
-        })
-    })
+// Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
+function operate(operator, num1, num2) {
+    switch (operator) {
+        case '+':
+            return add(num1, num2);
+            break;
+        case '-':
+            return substract(num1, num2);
+            break;
+        case '*':
+            return multiply(num1, num2);
+            break;
+        case '/':
+            return divide(num1, num2);
+            break;
+    }
 }
 
-document.addEventListener('DOMContentLoaded', initApp);
+console.log(operate('-', 5, 2))
